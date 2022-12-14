@@ -20,6 +20,10 @@ class A
     else
         printf("\n %d is not a palindrome \n", original);
   }
+  void Function1()
+  {
+    
+  }
 };
 int main()
 {   int ch;
