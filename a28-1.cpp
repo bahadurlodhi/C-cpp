@@ -7,7 +7,6 @@ struct TIME
   int minutes;
   int hours;
 };
-
 void computeTimeDifference(struct TIME, struct TIME, struct TIME *);
 
 int main()
