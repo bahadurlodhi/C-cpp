@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct Node{
+  int data;
+  struct Node *next;
+};
+struct Node *head;
+void push(){
+    int data;
+   struct Node *newNode,*temp;
+    newNode=(struct Node*)malloc(sizeof(struct Node));
+    printf("Enter the value of data : ");
+    scanf("%d",&data);
+    newNode->data=data;
+    newNode->next=NULL;
+
+    if(head==NULL)
+    {
+        head=newNode;
+    }
+    else{
+        temp=head;
+        while(temp->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        temp->next=newNode;
+        
+    }
+}
+void pop()
+{
+    struct Node *temp,*prev=NULL;
+    if(head==NULL)
+    {
+        printf("Stack is empty");
+    }
+    else
+    {
+      temp=head;
+      while(temp->next!=NULL)
+      {
+          temp=temp->next;
+      }
+      if(prev!=NULL)
+      {
+          prev->next=NULL;
+      }
+      else
+      {
+          head=NULL;
+      }
+      printf("the pop element is : %d",temp->data);
+      free(temp);
+      
+    }
+}
+void display()
+{
+    struct Node *temp;
+    if(head==NULL)
+    {
+        printf("Nothing to print....");
+    }
+    else
+    {
+        temp=head;
+        while(temp!=NULL)
+        {
+            printf("\n%d",temp->data);
+            temp=temp->next;
+        }
+    }
+}
+int main()
+{
+    push();
+    push();
+   push();
+display();
+pop();
+display();
+    return 0;
+}
